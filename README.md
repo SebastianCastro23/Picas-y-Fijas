@@ -34,5 +34,15 @@ ___
 
 ## 5. Desarrollo
 
-Como se mencionó anteriormente el programá se desarrolló en python utilizando varias librerías, entre las que destaca [tkinter](https://docs.python.org/2/library/tkinter.html). Tkinter es una librería utilizada para crear [interfaces gráficas de usuario](https://es.wikipedia.org/wiki/Interfaz_gr%C3%A1fica_de_usuario) conocidas también como **GUI** \(del inglés *graphical user interface*) 
+Como se mencionó anteriormente el programá se desarrolló en python utilizando varias librerías, entre las que destaca [tkinter](https://docs.python.org/2/library/tkinter.html). Tkinter es una librería utilizada para crear [interfaces gráficas de usuario](https://es.wikipedia.org/wiki/Interfaz_gr%C3%A1fica_de_usuario) conocidas también como **GUI** \(del inglés *graphical user interface*).
+
+### 5.1. Librerías
+
+Las librerías utilizadas en el programa fueron: *tkinter* \(GUI), *PIL* \(Insertar imágenes en una ventana de tkinter) y *random* \(para generar el número aleatoriamente).
+
+```python
+from tkinter import *
+from PIL import ImageTk, Image
+from tkinter import messagebox
+from random import randint
 
