@@ -34,4 +34,7 @@ ___
 
 ## 5. Desarrollo
 
+´´´python
+from tkinter impor *
+´´´
 
