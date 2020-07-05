@@ -34,7 +34,5 @@ ___
 
 ## 5. Desarrollo
 
-```python
-from tkinter import *
-```
+Como se mencionó anteriormente el programá se desarrolló en python utilizando varias librerías, entre las que destaca [tkinter](https://docs.python.org/2/library/tkinter.html). 
 
