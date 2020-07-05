@@ -18,7 +18,7 @@ El jugador cuenta con límite de diez intentos para adivinar el número. En cada
 
 ### 3.1. Un Solo Jugador
 
-En este modo de juego, el jugador tendrá que adivinar un número generado aleatoriamente por la máquina utilizando dentro del límite de diez intentos.
+En este modo de juego, el jugador tendrá que adivinar un número generado aleatoriamente por la máquina dentro del límite de diez intentos.
 
 ### 3.2. Dos Jugadores
 
