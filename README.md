@@ -241,4 +241,4 @@ def s_player():
 ```
 ### 5.4. Modo Dos Jugadores
 
-<p align="center"><img src="Un Jugador.PNG" width="40%"></p>
+<p align="center"><img src="Dos Jugadores.PNG" width="40%"></p>
