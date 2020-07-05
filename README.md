@@ -1,4 +1,4 @@
-<p align="center"><img src="banner picas.png" width="75%"></p>
+<p align="center"><img src="banner picas.png" width="100%"></p>
 
 # Proyecto Final
 
