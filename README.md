@@ -26,11 +26,4 @@ Cada jugador ingresará un número para que el otro lo adivine. Ambos tendran lo
 
 ## 4. Sistema de Puntuación
 
-$
-\left(
-\begin{array}{ll}
-123 & 4 \\
-1   & 234
-\end{array}
-\right)
-$
+$$f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}$$
