@@ -1,10 +1,1 @@
-# Picas y Fijas
-## Inicio
-### Siguiente
-***Haciendo una cursiva***
-
-[Wikipedia](https://es.wikipedia.org/wiki/Wikipedia:Portada)
-
-~~~
-from tkinter import *
-~~~
+<p align="center"><img src="banner-cs.svg" width="100%"></p>
