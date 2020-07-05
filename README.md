@@ -22,6 +22,6 @@ En este modo de juego, el jugador tendrá que adivinar un número generado aleat
 
 ### 3.2. Dos Jugadores
 
-Cada jugador ingresará un número para que el otro lo adivine. Ambos tendran los diez intentos y el juego acabará cuando alguno de los dos consiga las cuatro fijas o cuando ambos hayan gastado todos sus intentos. Solo se le entregará puntaje al ganador, y todos los casos se revelarán ambos números una vez terminado el juego.
+Cada jugador ingresará un número para que el otro lo adivine. Ambos tendran los diez intentos y el juego acabará cuando alguno de los dos consiga las cuatro fijas o cuando ambos hayan gastado todos sus intentos. Solo se le entregará puntaje al ganador, y en todos los casos se revelarán ambos números una vez terminado el juego.
 
 ## 4. Sistema de Puntuación
