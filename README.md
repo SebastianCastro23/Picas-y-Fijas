@@ -49,6 +49,8 @@ from random import randint
 
 ### 5.2. Menú
 
+Lo primero que se hizo fue crear la ventana principal del programa donde quedaría el menú, crear los objetos *(labels y botones)* e asignar los comandos correspondientes.
+
 ```python
 #Ventana menú
 menu = Tk()
