@@ -6,6 +6,6 @@
 
 ## 1. Introducción
 
-Para mi proyecto final de Introducción a las Ciencias de la Computación y  a la Programación
+Para mi proyecto final de Introducción a las Ciencias de la Computación y  a la Programación, desarrollé el juego **Picas y Fijas**
 
 
