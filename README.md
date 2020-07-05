@@ -2,6 +2,8 @@
 
 # Proyecto Final
 
+___
+
 <p align="center"><img src="Picas.png" width="25%"></p>
 
 ## 1. Introducción
