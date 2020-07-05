@@ -1,7 +1,7 @@
 # Picas y Fijas
 ## Inicio
 ### Siguiente
-1. Uno
-2. Dos
+- uno
+- dos
+  - 3
 
-  - Elemento
