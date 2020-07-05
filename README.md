@@ -27,3 +27,5 @@ Cada jugador ingresará un número para que el otro lo adivine. Ambos tendran lo
 ## 4. Sistema de Puntuación
 
 <p align="center"><img src="Puntuación.PNG" width="50%"></p>
+
+Al comienzo del juego, el jugador cuenta con doscientos puntos. Por cada intento que utilize se le descuentan veinte. Por cada fija se suman cinco puntos y por cada pica son tres más. Estas sumas y restas dan como resultado el puntaje final obtenido en la partida.
