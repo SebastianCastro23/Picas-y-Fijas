@@ -51,7 +51,7 @@ from random import randint
 
 <p align="center"><img src="Menú.PNG" width="25%"></p>
 
-Lo primero que se hizo fue crear la ventana principal del programa donde quedaría el menú, crear los objetos *(labels y botones)* e asignar los comandos correspondientes.
+Lo primero que se hizo fue crear la ventana principal del programa donde quedaría el menú, crear los objetos *(labels y botones)* y asignar los comandos correspondientes.
 
 ```python
 #Ventana menú
