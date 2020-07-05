@@ -500,4 +500,4 @@ intento = Label(dplayer_w,text='Intento 1 de 10',bg='blue',fg='white',font='Aria
 ```
 ## 6. Descargar el Juego
 
-Para descargar el juego y poder correrlo se necesita descargar el archivo *picas.rar* que se encuentrea en este repository y tener algún programa que ejecute archivos *.py*.
+Para descargar el juego y poder correrlo se necesita descargar el archivo *picas.rar* que se encuentra en este repository y tener algún programa que ejecute archivos *.py*.
