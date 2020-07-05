@@ -18,3 +18,10 @@ El jugador cuenta con límite de diez intentos para adivinar el número. En cada
 
 ### 3.1. Un Solo Jugador
 
+En este modo de juego, el jugador tendrá que adivinar un número generado aleatoriamente por la máquina utilizando dentro del límite de diez intentos.
+
+### 3.2. Dos Jugadores
+
+Cada jugador ingresará un número para que el otro lo adivine. Cada uno tendrá los diez intentos y el juego acabará cuando alguno de los dos consiga las cuatro fijas o cuando ambos hayan gastado todos sus intentos. Solo se le entregará puntaje al ganador, y todos los casos se revelarán ambos números una vez terminado el juego.
+
+## 4. Sistema de Puntuación
