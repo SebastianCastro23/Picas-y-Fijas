@@ -45,4 +45,41 @@ from tkinter import *
 from PIL import ImageTk, Image
 from tkinter import messagebox
 from random import randint
+```
 
+### 5.2. Menú
+
+```python
+#Ventana menú
+menu = Tk()
+menu.tittle('Picas y Fijas')
+menu.iconbitmap('picas.ico')
+logo = ImageTk.PhotoImage(Image.open('picasblanco.png'))
+
+#Comandos botones
+#1. Salir
+def salir():
+  response = messagebox.askokcancel('Salir del Juego','¿Estás seguro de querer salir?')
+  if response == 1:
+    menu.quit()
+    
+#2. Instrucciones
+def insbutton():
+	messagebox.showinfo('Instrucciones','El juego consiste en adivinar un número de 4     dígitos donde ningún dígito se repite. Las pistas que tenemos para adivinar el número se  llaman picas y fijas. Las picas son aquellos dígitos que si se encuentran en el número original pero no están en la posición correcta. Las fijas son los que se encuentran en la posición que es. Se tiene un número máximo de 10 intentos, en cada intento se le entregan el número de fijas y picas correspondientes. Al lado derecho se almacenan todos los intentos con sus respectivos números de picas(P) y fijas(F). El juego acaba cuando el jugador logre tener en un intento 4 fijas que significa que adivinó el número, o cuando se le acaben los 10 intentos. En el modo de un solo jugador, se tiene que adivinar un número generado aleatoriamente por la máquina; y en el de dos jugadores, cada uno ingresará un número para que el contrario lo adivine, gana el primero que logré las 4 fijas.')
+  
+#3. Un Jugador
+def s_player():
+
+#4. Dos Jugadores
+def d_player():
+
+#Objetos
+logolabel = Label(menu,bg='blue',image=logo).grid(row=0,column=0)
+splayer = Button(menu,text='Un Jugador',bg='blue',fg='white',font='Arial 14 bold',command=s_player).grid(row=1,column=0,sticky=W+E)
+dplayer = Button(menu,text='Dos Jugadores',bg='blue',fg='white',font='Arial 14 bold',command=d_player).grid(row=2,column=0,sticky=W+E)
+instrucciones = Button(menu,text='Instrucciones',bg='blue',fg='white',font='Arial 14 bold',command=insbutton).grid(row=3,column=0,sticky=W+E)
+exit = Button(menu,text='Salir del Juego',bg='blue',fg='white',font='Arial 14 bold',command=salir).grid(row=4,column=0,sticky=W+E)
+
+menu.mainloop()
+
+```
