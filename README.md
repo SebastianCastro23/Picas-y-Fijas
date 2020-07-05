@@ -91,3 +91,154 @@ menu.mainloop()
 ### 5.3. Modo Un Jugador
 
 <p align="center"><img src="Un Jugador.PNG" width="40%"></p>
+
+Al asignar un comando al botón de "Un Jugador" se crea una ventana secundaria donde se desarrollará este modo del juego. Se llevan variables globales para el número del intento, las fijas y picas obtenidas durante toda la partida y los puntos. Se crean los objetos y el botón "Confirmar" es el que ejecuta la comparación del número que se generó aleatoriamente y el ingresado por el usuario. El objeto *Entry* se borra al final de cada intento y se utilizan *labels* para entregar la cantidad de picas y fijas en cada intento. Por último se van agregando *Labels* en la parte derecha con los datos de cada intento, la fila *(row)* donde va ubicado cada grupo de datos está dado por el número del intento. Al final del ciclo el programa verifica si continuar o no, dependiendo de si el número de intentos es menor o igual a diez, o de que no se hayan conseguido aún las cuatro fijas.
+
+```python
+def s_player():
+	
+	#Ventana
+	splayer_w = Toplevel()
+	splayer_w.title('Picas y Fijas')
+	splayer_w.iconbitmap('picas.ico')
+	
+	#Variables globales
+	global intentos
+	intentos = 1
+	global puntos
+	puntos = 200
+	global fij_total
+	fij_total = 0
+	global pic_total
+	pic_total = 0
+	
+	#Comando Botón Confirmar
+	def sig():
+		
+		#Llamada de las variables globales para utilzirlas en la función
+		global intentos
+		global puntos
+		global fij_total
+		global pic_total
+		
+		#Generación del número a adivinar
+		if intentos == 1: #Esto indica que solo se genere el número cuando se encuentre corriendo el intento número 1
+			global num #Variable global donde se almacenará el número
+			num = ''
+			x = None
+			while len(num) != 4:
+			x = str(randint(0,9))
+			if x in num: #Para que no se repitan dígitos
+				pass
+			else:
+				num += x
+		else:
+			pass
+		
+		#Comprobación de la Entrada
+		
+		#Variables locales que cuentan las fijas y picas de cada intento
+		Fijas = 0
+		Picas = 0
+		guess = entrada.get()
+		guess = str(guess)
+		
+		#Comprobación de la Validez del número ingresado
+		#Que no se repita ningún dígito
+		repetir = False
+		for x in guess:
+			if (guess.count(x)) != 1:
+				repetir = True
+			else:
+				pass
+		
+		#Que sea un número de 4 dígitos
+		if len(guess) != 4:
+			messagebox.showerror('Error','El número debe ser de 4 dígitos')
+		elif repetir:
+			messagebox.showerror('Error','No se pueden repetir dígitos')
+		#Si es válido el proceso continúa
+		else:
+			#Comparamos los números para hallar el número de fijas y picas
+			for x in guess:
+				if x in num:
+					if (num.index(x)) == (guess.index(x)):
+						Fijas += 1
+						fij_total += #Actualización del número total de fijas de la partida
+					else:
+						Picas += 1
+						pic_total += 1 #Actualización del número total de picas de la partida
+				else:
+					pass
+			
+			#Entregamos el resultado en Labels
+			picaslbl = Label(splayer_w,text=str(Picas)+' Picas',bg='blue',fg='white',font='Arial 14 bold').grid(row=4,column=0,sticky=W+E)
+			fijaslbl = Label(splayer_w,text=str(Fijas)+' Fijas',bg='blue',fg='white',font='Arial 14 bold').grid(row=5,column=0,sticky=W+E)
+			
+			#Recopilamos en la tabla de resultados
+			
+			pic_txt = ''
+			fij_txt = ''
+			n = 0
+			while n < Picas:
+				pic_txt += 'P'
+				n += 1
+			
+			n = 0
+			while n < Fijas:
+				fij_txt += 'F'
+				n += 1
+
+			Label(splayer_w,text='INTENTOS',bg='#0A184B',fg='white',font='Arial 16 bold').grid(row=0,column=1,columnspan=3,sticky=W+E+N+S)
+			Label(splayer_w,text=guess,bg='#0A184B',fg='white',font='Arial 12 bold').grid(row=intentos,column=1,sticky=W+E+N+S)
+			Label(splayer_w,text=pic_txt,bg='#0A184B',fg='white',font='Arial 12 bold').grid(row=intentos,column=2,sticky=W+E+N+S)
+			Label(splayer_w,text=fij_txt,bg='#0A184B',fg='white',font='Arial 12 bold').grid(row=intentos,column=3,sticky=W+E+N+S)
+			
+			#Si el número del intento es mayor a 7 agrega mas casillas azules en la parte izquierda
+			if intentos >= 7:
+				Label(Label(splayer_w,bg='blue').grid(row=intentos,column=0,sticky=W+E+N+S)
+				
+			#Borra la Entrada
+			entrada.delete(0,END)
+			
+			#Actualización del número del intento
+			intentos += 1
+		#Label intentos
+		intento = Label(splayer_w,text='Intento '+str(intentos)+' de 10',fg='white',bg='blue',font='Arial 12',anchor=E).grid(row=6,column=0,sticky=W+E)
+		
+		#Verificar si continuar o no
+		#Si el número de fijas es 4
+		if Fijas == 4:
+
+			#Suma de los puntos totales
+			puntos -= (intentos-1)*20
+			puntos += fij_total*5
+			puntos += pic_total*3
+
+			#Entrega del resultado
+			response = messagebox.showinfo('Juego Terminado','GANASTE!, el número era '+num+'. Puntaje: '+str(puntos))
+			if response == 'ok':
+				splayer_w.destroy()
+		
+		#Si se pasó del número de intentos permitidos
+		elif intentos == 11:
+			intento = Label(splayer_w,text='Intento 10 de 10',fg='white',bg='blue',font='Arial 12',anchor=E).grid(row=6,column=0,sticky=W+E)
+			response = messagebox.showinfo('Juego Terminado','Te quedaste sin intentos, el número era '+num)
+			if response == 'ok':
+				splayer_w.destroy()
+
+		#Continuar
+		else:
+			pass
+			
+	#Objetos de la ventana
+	title = Label(splayer_w,text='UN JUGADOR',bg='blue',fg='white',font='Arial 24 bold').grid(row=0,column=0,sticky=W+E)
+	description = Label(splayer_w,text='Recuerda que solo tienes 10 intentos',bg='blue',fg='white',font='Arial 14').grid(row=1,column=0,sticky=W+E)
+	entrada = Entry(splayer_w,fg='blue',font='Arial 20')
+	entrada.grid(row=2,column=0,sticky=W+E)
+	siguiente = Button(splayer_w,text='Confirmar',bg='#26417D',fg='white',font='Arial 12 bold',command=sig).grid(row=3,column=0,sticky=W+E)
+	intento = Label(splayer_w,text='Intento '+str(intentos)+' de 10',fg='white',bg='blue',font='Arial 12',anchor=E).grid(row=6,column=0,sticky=W+E)
+			
+			
+
+```
