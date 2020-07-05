@@ -88,3 +88,6 @@ menu.mainloop()
 
 ```
 
+### 5.3. Modo Un Jugador
+
+<p align="center"><img src="Un Jugador.PNG" width="25%"></p>
