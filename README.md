@@ -34,5 +34,5 @@ ___
 
 ## 5. Desarrollo
 
-Como se mencionó anteriormente el programá se desarrolló en python utilizando varias librerías, entre las que destaca [tkinter](https://docs.python.org/2/library/tkinter.html). 
+Como se mencionó anteriormente el programá se desarrolló en python utilizando varias librerías, entre las que destaca [tkinter](https://docs.python.org/2/library/tkinter.html). Tkinter es una librería utilizada para crear [interfaces gráficas de usuario](https://es.wikipedia.org/wiki/Interfaz_gr%C3%A1fica_de_usuario) conocidas también como **GUI** \(del inglés *graphical user interface*) 
 
