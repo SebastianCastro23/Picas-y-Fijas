@@ -26,4 +26,4 @@ Cada jugador ingresará un número para que el otro lo adivine. Ambos tendran lo
 
 ## 4. Sistema de Puntuación
 
-<p align="center"><img src="Puntuación.PNG" width="100%"></p>
+<p align="center"><img src="Puntuación.PNG" width="75%"></p>
