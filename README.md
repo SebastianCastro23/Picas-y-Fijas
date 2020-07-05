@@ -4,4 +4,4 @@
 
 ## Picas y Fijas
 
-### Juan Sebastian Castro Pardo
+### *Juan Sebastian Castro Pardo*
