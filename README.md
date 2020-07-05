@@ -1,5 +1,5 @@
 # Picas y Fijas
 ## Inicio
 ### Siguiente
-___
+* Haciendo una cursiva *
 
