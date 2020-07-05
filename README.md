@@ -243,7 +243,7 @@ def s_player():
 
 <p align="center"><img src="Dos Jugadores.PNG" width="40%"></p>
 
-En el modo de Dos Jugadores las funciones y variables que se emplean son parecidas a como se empleaban anteriormente con la diferencia de que se tienen que diferencias las variables correspondientes a cada jugador y llevar una global con el turno actual para saber que variables desplegar durante el proceso. Cuando se termina el turno del jugador 1 se verifican solo el número de fijas mientras que en el de el jugador 2 también se verifica el número de intentos para saber si continuar o no.
+En el modo de Dos Jugadores las funciones y variables que se emplean son parecidas a como se empleaban anteriormente con la diferencia de que se tienen que establecer variables correspondientes a cada jugador y llevar una global con el turno actual para saber que variables desplegar durante el proceso. Cuando se termina el turno del jugador 1 se verifican solo el número de fijas mientras que en el de el jugador 2 también se verifica el número de intentos para saber si continuar o no.
 
 ```python
 def d_player():
