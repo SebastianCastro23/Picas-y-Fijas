@@ -498,3 +498,6 @@ siguiente = Button(dplayer_w,text='Confirmar',bg='#26417D',fg='white',font='Aria
 intento = Label(dplayer_w,text='Intento 1 de 10',bg='blue',fg='white',font='Arial 12',anchor=E).grid(row=7,column=0,sticky=W+E)
 	 								
 ```
+## 6. Descargar el Juego
+
+Para descargar el juego y poder correrlo se necesita descargar el archivo *picas.rar* que se encuentrea en este repository y tener algún programa que ejecute archivos *.py*.
