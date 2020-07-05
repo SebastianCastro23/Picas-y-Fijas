@@ -238,7 +238,7 @@ def s_player():
 	entrada.grid(row=2,column=0,sticky=W+E)
 	siguiente = Button(splayer_w,text='Confirmar',bg='#26417D',fg='white',font='Arial 12 bold',command=sig).grid(row=3,column=0,sticky=W+E)
 	intento = Label(splayer_w,text='Intento '+str(intentos)+' de 10',fg='white',bg='blue',font='Arial 12',anchor=E).grid(row=6,column=0,sticky=W+E)
-			
-			
-
 ```
+### 5.4. Modo Dos Jugadores
+
+<p align="center"><img src="Un Jugador.PNG" width="40%"></p>
