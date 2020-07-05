@@ -2,6 +2,6 @@
 
 # Proyecto Final
 
-<p align="center"><img src="Picas.png" width="50%"></p>
+<p align="center"><img src="Picas.png" width="25%"></p>
 
 
