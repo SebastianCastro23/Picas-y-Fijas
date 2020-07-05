@@ -49,7 +49,7 @@ from random import randint
 
 ### 5.2. Menú
 
-<p align="center"><img src="Menú.PNG" width="50%"></p>
+<p align="center"><img src="Menú.PNG" width="25%"></p>
 
 Lo primero que se hizo fue crear la ventana principal del programa donde quedaría el menú, crear los objetos *(labels y botones)* e asignar los comandos correspondientes.
 
