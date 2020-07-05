@@ -1,5 +1,5 @@
 # Picas y Fijas
 ## Inicio
 ### Siguiente
-- Uno
-- Dos
+1. Uno
+2. Dos
