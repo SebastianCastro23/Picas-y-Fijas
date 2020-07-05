@@ -90,4 +90,4 @@ menu.mainloop()
 
 ### 5.3. Modo Un Jugador
 
-<p align="center"><img src="Un Jugador.PNG" width="50%"></p>
+<p align="center"><img src="Un Jugador.PNG" width="40%"></p>
