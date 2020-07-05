@@ -374,10 +374,127 @@ def d_player():
 					if response == 'ok':
 						dplayer_w.destroy()
 
-                #Continuar
+                                #Continuar
 				else:
 					w_turn += 1
 					turno = Label(dplayer_w,text='JUGADOR '+str(w_turn),bg='blue',fg='white',font='Arial 16').grid(row=2,column=0,sticky=W+E)
-				
+					
+			#Turno Jugador 2
+			elif w_turn == 2:
+
+
+				for x in guess:
+					if x in num_p1:
+						if (num_p1.index(x)) == (guess.index(x)):
+							Fijas += 1
+							fij_total_p2 += 1
+						else:
+							Picas += 1
+							pic_total_p2 += 1
+					else:
+						pass
+
+
+                                #Entrega del Resultado
+				picaslbl = Label(dplayer_w,text=str(Picas)+' Picas',bg='blue',fg='white',font='Arial 14 bold').grid(row=5,column=0,sticky=W+E)
+				fijaslbl = Label(dplayer_w,text=str(Fijas)+' Fijas',bg='blue',fg='white',font='Arial 14 bold').grid(row=6,column=0,sticky=W+E)
+
+				#Recopilación de resultados
+
+				pic_txt = ''
+				fij_txt = ''
+				n = 0
+				while n < Picas:
+					pic_txt += 'P'
+					n += 1
+
+				n = 0
+				while n < Fijas:
+					fij_txt += 'F'
+					n += 1
+
+				Label(dplayer_w,text='INTENTOS',bg='#0A184B',fg='white',font='Arial 16 bold').grid(row=0,column=1,columnspan=6,sticky=W+E+N+S)
+				Label(dplayer_w,text='JUGADOR 2',bg='#0A184B',fg='white',font='Arial 14 bold').grid(row=1,column=4,columnspan=3,sticky=W+E+N+S)
+				Label(dplayer_w,text=guess,bg='#0A184B',fg='white',font='Arial 12 bold').grid(row=(intentos_p2+1),column=4,sticky=W+E+N+S)
+				Label(dplayer_w,text=pic_txt,bg='#0A184B',fg='white',font='Arial 12 bold').grid(row=(intentos_p2+1),column=5,sticky=W+E+N+S)
+				Label(dplayer_w,text=fij_txt,bg='#0A184B',fg='white',font='Arial 12 bold').grid(row=(intentos_p2+1),column=6,sticky=W+E+N+S)
+
+				#Borramos la entrada
+
+				entrada.delete(0,END)
+
+				#Acutalizamos el número de intentos
+
+				intentos_p2 += 1
+				intento = Label(dplayer_w,text='Intento '+str(intentos_p1)+' de 10',bg='blue',fg='white',font='Arial 12',anchor=E).grid(row=7,column=0,sticky=W+E)
+
+				#Verificamos si continuar
+
+				#4 Fijas
+
+				if Fijas == 4:
+
+					#sumamos los puntos
+					puntos_p2 -= (intentos_p2-1)*20
+					puntos_p2 += fij_total_p2*5
+					puntos_p2 += pic_total_p2*3
+
+					#Entrega del resultado
+					response = messagebox.showinfo('Juego Terminado','HA GANADO EL JUGADOR 2! El número del jugador 1 era '+num_p1+', el número del jugador 2 era '+str(num_p2)+'. Puntaje: '+str(puntos_p2))
+					if response == 'ok':
+						dplayer_w.destroy()
+
+				#Exceder el límite de intentos
+
+				elif intentos_p1 == 11:
+					intento = Label(dplayer_w,text='Intento 10 de 10',fg='white',bg='blue',font='Arial 12',anchor=E).grid(row=7,column=0,sticky=W+E)
+					response = messagebox.showinfo('Juego Terminado','Se han quedado sin intentos, el número del jugador 1 era '+num_p1+' ,y el del jugador 2 era '+num_p2+'.')
+					if response == 'ok':
+						dplayer_w.destroy()
+
+                                #Continuar
+				else:
+					w_turn -= 1
+					turno = Label(dplayer_w,text='JUGADOR '+str(w_turn),bg='blue',fg='white',font='Arial 16').grid(row=2,column=0,sticky=W+E)
+
+#Comando para empezar el juego después de haber ingresado ambos números
+def juego():
+	#Llamamos las variables globales de los números de ambos jugadores
+	global num_p1
+	global num_p2
 	
+	#Guardamos el número del jugador 2
+	num_p2 = str(entrada.get())
+	entrada.delete(0,END)
+	
+	#Creación de la variable global que indica el turno
+	global w_turn
+	w_turn = 1
+	
+	#Objetos
+	description = Label(dplayer_w,text='Cada uno tendrá 10 intentos para adivinar el número del otro',bg='blue',fg='white',font='Arial 14',anchor=W).grid(row=1,column=0,sticky=W+E)
+	turno = Label(dplayer_w,text='JUGADOR '+str(w_turn),bg='blue',fg='white',font='Arial 16').grid(row=2,column=0,sticky=W+E)
+	siguiente = Button(dplayer_w,text='Confirmar',bg='#26417D',fg='white',font='Arial 12 bold',command=turnos).grid(row=4,column=0,sticky=W+E)
+	
+#Comando para guardar el número del jugador 1
+def confirmar():
+	#Guardar número del jugador 1
+	global num_p1
+	num_p1 = str(entrada.get())
+	entrada.delete(0,END)
+	
+	#Objetos
+	turno = Label(dplayer_w,text='JUGADOR 2',bg='blue',fg='white',font='Arial 16').grid(row=2,column=0,sticky=W+E)
+	siguiente = Button(dplayer_w,text='Confirmar',bg='#26417D',fg='white',font='Arial 12 bold',command=juego).grid(row=4,column=0,sticky=W+E)
+	
+#Objetos de la Ventana
+
+title = Label(dplayer_w,text='DOS JUGADORES',bg='blue',fg='white',font='Arial 24 bold').grid(row=0,column=0,sticky=W+E)
+description = Label(dplayer_w,text='A continuación se les pediran sus números',bg='blue',fg='white',font='Arial 14',anchor=W).grid(row=1,column=0,sticky=W+E)
+turno = Label(dplayer_w,text='JUGADOR 1',bg='blue',fg='white',font='Arial 16').grid(row=2,column=0,sticky=W+E)
+entrada = Entry(dplayer_w,fg='blue',font='Arial 20')
+entrada.grid(row=3,column=0,sticky=W+E)
+siguiente = Button(dplayer_w,text='Confirmar',bg='#26417D',fg='white',font='Arial 12 bold',command=confirmar).grid(row=4,column=0,sticky=W+E)
+intento = Label(dplayer_w,text='Intento 1 de 10',bg='blue',fg='white',font='Arial 12',anchor=E).grid(row=7,column=0,sticky=W+E)
+	 								
 ```
